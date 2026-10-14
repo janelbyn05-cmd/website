@@ -1,0 +1,400 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Mara Villanueva Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one left-aligned column on a 12-col grid; big name up top, rows (not cards) for work, a real timeline for experience. */
+:root {
+  --bg: #F2F4F1;
+  --surface: #E6EAE5;
+  --fg: #121A16;
+  --muted: #55625B;
+  --line: #CBD2CB;
+  --accent: #2A47F0;
+  --accent-fg: #FFFFFF;
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E1411; --surface: #17201B; --fg: #E8EDE9; --muted: #98A59D;
+    --line: #2A362F; --accent: #8FA6FF; --accent-fg: #0E1411;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E1411; --surface: #17201B; --fg: #E8EDE9; --muted: #98A59D;
+  --line: #2A362F; --accent: #8FA6FF; --accent-fg: #0E1411;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  padding-block: 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration-color: var(--line); text-underline-offset: 4px; }
+a:hover { text-decoration-color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.wrap { max-width: 1080px; margin: 0 auto; }
+
+/* Header */
+header.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; flex-wrap: wrap; }
+.mark { font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; text-decoration: none; }
+nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+nav a { font-family: var(--font-mono); font-size: 13px; text-decoration: none; color: var(--muted); }
+nav a:hover { color: var(--fg); }
+.theme-btn {
+  font-family: var(--font-mono); font-size: 12px; color: var(--fg); background: transparent;
+  border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; cursor: pointer;
+}
+.theme-btn:hover { border-color: var(--accent); }
+
+/* Hero */
+.hero { padding-block: 72px 64px; display: grid; gap: 40px; }
+.status {
+  display: inline-flex; align-items: center; gap: 10px; width: fit-content;
+  font-family: var(--font-mono); font-size: 13px; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px;
+}
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: none; }
+@media (prefers-reduced-motion: no-preference) { .dot { animation: pulse 2.4s ease-in-out infinite; } }
+@keyframes pulse { 50% { opacity: .3; } }
+h1 {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(2.8rem, 9.5vw, 7.2rem);
+  line-height: .95; letter-spacing: -0.04em; margin: 0; text-wrap: balance;
+}
+h1 em { font-style: normal; color: var(--accent); }
+.lede { max-width: 56ch; font-size: clamp(1.1rem, 2.2vw, 1.3rem); color: var(--muted); margin: 0; }
+.lede strong { color: var(--fg); font-weight: 500; }
+.cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  font-family: var(--font-body); font-weight: 600; font-size: 15px; text-decoration: none;
+  padding: 12px 22px; border-radius: 6px; border: 1px solid var(--fg); color: var(--fg); background: transparent;
+  cursor: pointer; display: inline-block;
+}
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+.btn:hover { transform: translateY(-1px); }
+@media (prefers-reduced-motion: reduce) { .btn:hover { transform: none; } }
+
+/* Sections */
+section { padding-block: 64px; border-top: 1px solid var(--line); }
+.sec-head { display: grid; grid-template-columns: 1fr; gap: 8px; margin-bottom: 40px; }
+.label { font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.9rem, 4.5vw, 3rem); letter-spacing: -0.03em; line-height: 1.05; margin: 0; text-wrap: balance; }
+
+/* About */
+.about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; }
+.about-grid > * { min-width: 0; }
+.about-grid p { margin: 0 0 1.1em; max-width: 62ch; }
+.facts { margin: 0; display: grid; gap: 0; align-content: start; }
+.facts div { display: flex; justify-content: space-between; gap: 16px; padding-block: 12px; border-bottom: 1px solid var(--line); }
+.facts div:first-child { border-top: 1px solid var(--line); }
+.facts dt { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.facts dd { margin: 0; text-align: right; font-weight: 500; }
+.facts dd.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+/* Work rows */
+.work { list-style: none; margin: 0; padding: 0; }
+.work li { border-top: 1px solid var(--line); }
+.work li:last-child { border-bottom: 1px solid var(--line); }
+.row {
+  display: grid; grid-template-columns: 72px 1.2fr 1.6fr auto; gap: 24px; align-items: baseline;
+  padding-block: 26px; text-decoration: none; transition: background .2s, padding .2s;
+}
+.row > * { min-width: 0; }
+.row:hover { background: var(--surface); padding-inline: 14px; }
+@media (prefers-reduced-motion: reduce) { .row { transition: none; } }
+.row .yr { font-family: var(--font-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.row h3 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.3rem, 2.6vw, 1.75rem); letter-spacing: -0.02em; margin: 0; line-height: 1.15; }
+.row p { margin: 0; color: var(--muted); font-size: 16px; }
+.row .tags { font-family: var(--font-mono); font-size: 12px; color: var(--accent); text-align: right; }
+.row:hover .tags { text-decoration: underline; }
+
+/* Skills */
+.skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.skills > * { min-width: 0; }
+.skills h3 { font-family: var(--font-display); font-size: 1.15rem; margin: 0 0 14px; letter-spacing: -0.01em; }
+.skills ul { list-style: none; margin: 0; padding: 0; }
+.skills li { padding-block: 9px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; }
+.skills li span:last-child { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+
+/* Timeline */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.timeline li { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding-block: 24px; border-top: 1px solid var(--line); }
+.timeline li > * { min-width: 0; }
+.when { font-family: var(--font-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.timeline h3 { font-family: var(--font-display); font-size: 1.3rem; margin: 0 0 4px; letter-spacing: -0.02em; }
+.timeline .org { color: var(--accent); font-weight: 500; }
+.timeline p { margin: 8px 0 0; color: var(--muted); max-width: 62ch; }
+
+/* Contact */
+.contact { display: grid; gap: 28px; }
+.contact h2 { font-size: clamp(2.2rem, 7vw, 5rem); line-height: 1; }
+.mail-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.mail {
+  font-family: var(--font-mono); font-size: clamp(1rem, 2.6vw, 1.35rem);
+  padding: 12px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
+  user-select: all; overflow-wrap: anywhere;
+}
+.links { display: flex; gap: 22px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 14px; }
+footer { border-top: 1px solid var(--line); padding-block: 28px calc(28px + 8px); color: var(--muted); font-family: var(--font-mono); font-size: 12px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+/* Narrow screens */
+@media (max-width: 820px) {
+  .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  .skills { grid-template-columns: 1fr; gap: 32px; }
+  .row { grid-template-columns: 56px 1fr; gap: 6px 16px; }
+  .row p, .row .tags { grid-column: 2; text-align: left; }
+  .row:hover { padding-inline: 0; background: transparent; }
+  .timeline li { grid-template-columns: 1fr; gap: 6px; }
+  .hero { padding-block: 48px 48px; }
+  section { padding-block: 48px; }
+  nav { gap: 16px; }
+}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top">mv.</a>
+    <nav aria-label="Sections">
+      <a href="#about">about</a>
+      <a href="#work">work</a>
+      <a href="#skills">skills</a>
+      <a href="#path">path</a>
+      <a href="#contact">contact</a>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Switch color theme">theme</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <div class="status"><span class="dot" aria-hidden="true"></span><span>Booking projects from November</span></div>
+    <h1>Mara Villanueva builds interfaces that <em>stay out of the way.</em></h1>
+    <p class="lede">I'm a front-end developer and product designer in Manila. I turn <strong>messy workflows</strong> into calm, fast screens for clinics, logistics teams, and small shops.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#work">See selected work</a>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="sec-head">
+      <span class="label">About</span>
+      <h2>Design and code, one person, fewer handoffs.</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>I started in print layout, moved into web development in 2018, and have spent the years since shipping interfaces people use all day: booking tools, dispatch boards, point-of-sale screens.</p>
+        <p>I work in the browser from the first sketch. Prototypes are real HTML, so you test with actual typing, scrolling, and slow connections before anyone writes a spec.</p>
+        <p>Outside of client work I teach a monthly accessibility workshop for local student groups and keep a small library of type specimens I've photographed around Metro Manila.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Based in</dt><dd>Manila, PH</dd></div>
+        <div><dt>Local time</dt><dd class="mono" id="clock">--:--</dd></div>
+        <div><dt>Works in</dt><dd>English, Filipino</dd></div>
+        <div><dt>Hours</dt><dd>Mon to Fri, 9 to 6 PHT</dd></div>
+        <div><dt>Replies</dt><dd>Within 1 business day</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="sec-head">
+      <span class="label">Selected work</span>
+      <h2>Four projects from the last three years.</h2>
+    </div>
+    <ul class="work">
+      <li><a class="row" href="#contact">
+        <span class="yr">2026</span>
+        <h3>Tala Clinic Booking</h3>
+        <p>Appointment system for a 12-doctor clinic. Front desk time per booking dropped from about 4 minutes to 70 seconds.</p>
+        <span class="tags">React · Design system</span>
+      </a></li>
+      <li><a class="row" href="#contact">
+        <span class="yr">2025</span>
+        <h3>Daloy Dispatch Board</h3>
+        <p>Live board for a courier fleet of 80 riders, built to stay readable on a cracked phone in direct sun.</p>
+        <span class="tags">TypeScript · Maps</span>
+      </a></li>
+      <li><a class="row" href="#contact">
+        <span class="yr">2024</span>
+        <h3>Suki Point of Sale</h3>
+        <p>Offline-first register for neighborhood stores. Works through brownouts and syncs when the signal returns.</p>
+        <span class="tags">PWA · Offline</span>
+      </a></li>
+      <li><a class="row" href="#contact">
+        <span class="yr">2023</span>
+        <h3>Barangay Services Portal</h3>
+        <p>Plain-language forms for certificates and permits, tested with residents aged 18 to 74 and built to WCAG 2.2 AA.</p>
+        <span class="tags">Accessibility · Forms</span>
+      </a></li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head">
+      <span class="label">Skills</span>
+      <h2>What I reach for every day.</h2>
+    </div>
+    <div class="skills">
+      <div>
+        <h3>Build</h3>
+        <ul>
+          <li><span>HTML and CSS</span><span>8 yrs</span></li>
+          <li><span>TypeScript</span><span>6 yrs</span></li>
+          <li><span>React</span><span>6 yrs</span></li>
+          <li><span>Vite and Node</span><span>5 yrs</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Design</h3>
+        <ul>
+          <li><span>Interface systems</span><span>7 yrs</span></li>
+          <li><span>Typography</span><span>10 yrs</span></li>
+          <li><span>Prototyping</span><span>6 yrs</span></li>
+          <li><span>User interviews</span><span>5 yrs</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Quality</h3>
+        <ul>
+          <li><span>WCAG audits</span><span>5 yrs</span></li>
+          <li><span>Performance budgets</span><span>5 yrs</span></li>
+          <li><span>Playwright tests</span><span>4 yrs</span></li>
+          <li><span>Low-bandwidth testing</span><span>6 yrs</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="path">
+    <div class="sec-head">
+      <span class="label">Path</span>
+      <h2>Where I've worked.</h2>
+    </div>
+    <ol class="timeline">
+      <li>
+        <span class="when">2022 – now</span>
+        <div>
+          <h3>Independent <span class="org">· Freelance</span></h3>
+          <p>Product design and front-end builds for clinics, couriers, and retail. Typical engagement runs 6 to 10 weeks.</p>
+        </div>
+      </li>
+      <li>
+        <span class="when">2019 – 2022</span>
+        <div>
+          <h3>Senior Front-End Developer <span class="org">· Kalye Labs</span></h3>
+          <p>Led the web team of five on a mobile-first commerce platform. Cut median page weight by 62%.</p>
+        </div>
+      </li>
+      <li>
+        <span class="when">2018 – 2019</span>
+        <div>
+          <h3>Junior Web Developer <span class="org">· Pixel Printworks</span></h3>
+          <p>Moved from print layout into building marketing sites and email templates for 30+ clients.</p>
+        </div>
+      </li>
+      <li>
+        <span class="when">2014 – 2018</span>
+        <div>
+          <h3>BS Multimedia Arts <span class="org">· Polytechnic University of the Philippines</span></h3>
+          <p>Thesis on bilingual signage legibility in public transit.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <span class="label">Contact</span>
+      <h2>Have something that needs to feel simple?</h2>
+      <div class="mail-row">
+        <span class="mail" id="mailText">hello@maravillanueva.example</span>
+        <button class="btn" id="copyBtn" type="button">Copy address</button>
+      </div>
+      <div class="links">
+        <a href="https://github.com" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com" rel="noopener">LinkedIn</a>
+        <a href="https://dribbble.com" rel="noopener">Dribbble</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Mara Villanueva</span>
+    <span>Set in Bricolage Grotesque and Instrument Sans</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Live Manila clock
+  var clock = document.getElementById('clock');
+  function tick() {
+    try {
+      clock.textContent = new Intl.DateTimeFormat('en-GB', {
+        hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Manila'
+      }).format(new Date()) + ' PHT';
+    } catch (e) { clock.textContent = 'Manila'; }
+  }
+  tick(); setInterval(tick, 20000);
+
+  // Theme toggle: cycles system -> light -> dark
+  var root = document.documentElement;
+  var btn = document.getElementById('themeBtn');
+  var modes = ['system', 'light', 'dark'];
+  var mode = 'system';
+  try { var saved = localStorage.getItem('mv-theme'); if (modes.indexOf(saved) > -1) mode = saved; } catch (e) {}
+  function apply() {
+    if (mode === 'system') root.removeAttribute('data-theme'); else root.setAttribute('data-theme', mode);
+    btn.textContent = 'theme: ' + mode;
+  }
+  btn.addEventListener('click', function () {
+    mode = modes[(modes.indexOf(mode) + 1) % modes.length];
+    try { localStorage.setItem('mv-theme', mode); } catch (e) {}
+    apply();
+  });
+  apply();
+
+  // Copy email with fallback
+  var copyBtn = document.getElementById('copyBtn');
+  var mailText = document.getElementById('mailText');
+  copyBtn.addEventListener('click', function () {
+    var text = mailText.textContent;
+    function done() { copyBtn.textContent = 'Copied'; setTimeout(function () { copyBtn.textContent = 'Copy address'; }, 1800); }
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(mailText);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      copyBtn.textContent = 'Press Ctrl/Cmd+C';
+    }
+    try {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } catch (e) { fallback(); }
+  });
+})();
+</script>
+
+</body></html>
